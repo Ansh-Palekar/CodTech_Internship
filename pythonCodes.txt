@@ -1,0 +1,112 @@
+Python Codes
+
+import pandas as pd
+
+# Sample data
+data = {
+    'ProductID': range(101, 121),  # 20 rows
+    'ProductName': [
+        'Apple', 'Banana', 'Carrot', 'Dates', 'Eggplant',
+        'Fig', 'Grapes', 'Honeydew', 'Iceberg Lettuce', 'Jackfruit',
+        'Kiwi', 'Lemon', 'Mango', 'Nectarine', 'Orange',
+        'Papaya', 'Quince', 'Raspberry', 'Strawberry', 'Tomato'
+    ],
+    'Category': [
+        'Fruit', 'Fruit', 'Vegetable', 'Fruit', 'Vegetable',
+        'Fruit', 'Fruit', 'Fruit', 'Vegetable', 'Fruit',
+        'Fruit', 'Fruit', 'Fruit', 'Fruit', 'Fruit',
+        'Fruit', 'Fruit', 'Fruit', 'Fruit', 'Fruit'
+    ],
+    'Sales': [
+        120, 150, 180, 90, 60,
+        70, 210, 115, 85, 130,
+        95, 110, 240, 190, 250,
+        175, 60, 140, 225, 100
+    ],
+    'Profit': [
+        25, 30, 35, 18, 10,
+        12, 50, 20, 15, 28,
+        22, 26, 55, 42, 60,
+        36, 10, 32, 48, 20
+    ],
+    'Region': [
+        'North', 'South', 'East', 'West', 'North',
+        'East', 'South', 'West', 'North', 'East',
+        'South', 'West', 'North', 'South', 'East',
+        'West', 'North', 'South', 'East', 'West'
+    ]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Power BI dataset
+df = dataset
+
+# Group by product and sum sales
+top_sales = df.groupby('ProductName')['Sales'].sum().sort_values(ascending=False)
+
+# Plot the top 10 products (optional, change if needed)
+top_sales = top_sales.head(10)
+
+# Create bar chart
+plt.figure(figsize=(9, 5))
+top_sales.plot(kind='bar', color='steelblue', edgecolor='black')
+plt.title('Top 10 Products by Sales', fontsize=14)
+plt.xlabel('Product Name')
+plt.ylabel('Total Sales')
+plt.xticks(rotation=45, ha='right')
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Power BI provides 'dataset' automatically
+df = dataset
+
+# Group by Region and sum Profit
+profit_by_region = df.groupby('Region')['Profit'].sum().sort_values()
+
+# Plotting
+plt.figure(figsize=(8, 5))
+profit_by_region.plot(kind='bar', color='mediumseagreen', edgecolor='black')
+plt.title('Total Profit by Region', fontsize=14)
+plt.xlabel('Region')
+plt.ylabel('Total Profit')
+plt.xticks(rotation=45)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Use dataset injected by Power BI
+df = dataset
+
+# Group and plot
+sales_by_category = df.groupby('Category')['Sales'].sum().sort_values()
+plt.figure(figsize=(8, 5))
+sales_by_category.plot(kind='barh', color='salmon')
+plt.title('Total Sales by Category')
+plt.xlabel('Sales')
+plt.ylabel('Category')
+plt.grid(axis='x', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
